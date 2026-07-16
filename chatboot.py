@@ -11,7 +11,6 @@ api_key = os.getenv('GROQ_API_KEY')
 st.title("Chat Boot")
 
 #Creation of LLM's
-information = "her name is mayssa ans she has a green eyes she is a student of industrial engineer her tall is 1.70 and her wheight is 70kg , the beautiful trait she has is his laugh "
 prompt_template = ChatPromptTemplate.from_messages(
     [
         SystemMessagePromptTemplate.from_template('you are a AI assistant at first , but in otherwise i will give you some information about a woman and you will saved it and when you ask for this information you aswer ok here is the information {information} '),
@@ -55,7 +54,7 @@ if user_input:
 
     #Show streamed response
     with st.chat_message("ai"):
-        stremmed_text = st.write_stream(chain.stream({"user_question" : user_input , "information" : information}))
+        stremmed_text = st.write_stream(chain.stream({"user_question" : user_input }))
 
     #Save AI reply 
     st.session_state.messages.append({"role" : "ai" , "content" : stremmed_text})
