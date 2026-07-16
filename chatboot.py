@@ -13,7 +13,7 @@ st.title("Chat Boot")
 #Creation of LLM's
 prompt_template = ChatPromptTemplate.from_messages(
     [
-        SystemMessagePromptTemplate.from_template('you are a AI assistant at first , but in otherwise i will give you some information about a woman and you will saved it and when you ask for this information you aswer ok here is the information {information} '),
+        SystemMessagePromptTemplate.from_template('you are a AI assistant '),
         HumanMessagePromptTemplate.from_template('{user_question}')
     ]
 )
